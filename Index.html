@@ -200,12 +200,63 @@
                     <p>The Results window shows the version of the SQL Server as shown in the above screenshot.
                          A quick way to execute a query is to press the F5 keyboard shortcut.</p>
                     <p>Now, you should know how to connect to a SQL Server and execute a query from the SSMS.</p>
-                    <li></li>
                 </ul>
             </article>
             </section>
-            <section class="main-section">
-                <header></header>
+            <section class="main-section" id="Database">
+                <header>Database</header>
+                <hr>
+                <article>
+                    <ul>
+                        <li>Login Database</li>
+                        <p>A login is a simple credential for accessing SQL Server. For example, you provide your username and password when logging on to Windows or even your e-mail account. 
+                            This username and password builds up the credentials. Therefore, credentials are simply a username and a password.</p>
+                            <p>SQL Server allows four types of logins −</p>
+                            <ul>
+                                <li>A login based on Windows credentials.</li>
+                                <li>A login specific to SQL Server.</li>
+                                <li>A login mapped to a certificate.</li>
+                                <li>A login mapped to asymmetric key.</li>
+                            </ul>
+                            <p>Logins based on Windows credentials allow you to log in to SQL Server using a Windows username and password. 
+                                If you need to create your own credentials (username and password,) you can create a login specific to SQL Server.</p>
+                            <p>To create, alter, or remove a SQL Server login, you can take one of two approaches −</p>
+                            <ul>
+                                <li>Using SQL Server Management Studio.</li>
+                                <li>Using T-SQL statements</li>
+                            </ul>
+                            <br>
+                        <li>Create Database</li>
+                        <p>Database is a collection of objects such as table, view, stored procedure, function, trigger, etc.</p>
+                        <p>In MS SQL Server, two types of databases are available.</p>
+                        <ul>
+                            <li>System databases</li>
+                            <p>System databases are created automatically when we install MS SQL Server. Following is a list of system databases −</p>
+                            <ul>
+                                <li>Master</li>
+                                <li>Model</li>
+                                <li>MSDB</li>
+                                <li>TempDb</li>
+                                <li>Resource (Introduced in 2005 version)</li>
+                                <li>Distribution(It’s for Replication feature only)</li>
+                            </ul>
+                            <li>User Databases</li>
+                            <p>User databases are created by users (Administrators, developers, and testers who have access to create databases).</p>
+                            <p>Following methods are used to create user database.</p>
+                            <ul>
+                                <li>Method 1 – Using T-SQL Script or Restore Database</li>
+                                <p>Following is the basic syntax for creating database in MS SQL Server.</p>
+                                <pre><code>Create database <yourdatabasename></code></pre>
+                                    <p>OR</p>
+                                <pre><code>Restore Database <yourdatabasename> from disk = '<Backup file location + file name></Backup></code></pre>
+                            </ul>
+                        </ul>
+
+                        <li>Select Database</li>
+
+                        <li>Drop Database</li>
+                    </ul>
+                </article>
             </section>
             <section class="main-section">
                 <header></header>
