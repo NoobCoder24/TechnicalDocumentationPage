@@ -1,0 +1,43 @@
+/* The side navigation menu */
+.navbarClass{
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(106, 172, 238);
+    overflow-x: hidden;
+    padding-top: 20px;
+    line-break: auto;
+   
+}
+
+.navbarClass header{
+    color: white;
+}
+
+/* The navigation menu links */
+.navbarClass a{
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+.navbarClass a:hover{
+    color: #f1f1f1;
+}
+
+
+.main{
+    margin-left: 200px;
+}
+
+@media screen and (max-height: 450px) {
+    .navbarClass {padding-top: 15px;}
+    .navbarClass a {font-size: 18px;}
+  }

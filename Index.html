@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS SQL Server</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="nav">
+    <nav id="navbar" class="navbarClass">
+        <header>MSSQL Documentation</header>
+        
+        <a href="#Introduction" class="nav-link">Introduction</a>
+        <a href="#SQL Server Architecture" class="nav-link">SQL Server Architecture</a>
+        <a href="#SQL Server Services and Tools" class="nav-link">SQL Server Services and Tools</a>
+        <a href="#SQL Server Editions" class="nav-link">SQL Server Editions</a>
+        <a href="#Installation" class="nav-link">Installation</a>
+        <a href="#Connect to the SQL Server" class="nav-link">Connect to the SQL Server</a>
+        <a href="" class="nav-link"></a>
+        <a href="" class="nav-link"></a>
+        <a href="" class="nav-link"></a>
+    </nav>
+    </div>
+  
+
+    <div class="main">
+        <main id="main-doc">
+            <section class="main-section" id="Introduction">
+                <header >Introduction</header>
+                <article>
+                    <hr>
+                <p>Microsoft SQL Server is a relational database management system developed by Microsoft. 
+                    As a database server, it is a software product with the primary function of storing and retrieving data as requested by
+                     other software applications—which may run either on the same computer or on another computer across a network (including the Internet).</p>
+                <p>Similar to other RDBMS software, SQL Server is built on top of SQL, a standard programming language for interacting with the 
+                        relational databases. SQL server is tied to Transact-SQL, or T-SQL, the Microsoft’s implementation of SQL 
+                        that adds a set of proprietary programming constructs.</p>
+                <p>Microsoft markets at least a dozen different editions of Microsoft SQL Server, 
+                    aimed at different audiences and for workloads ranging from small single-machine applications to large 
+                    Internet-facing applications with many concurrent users.</p>
+
+                <p>On September 24th, 2018, Microsoft launched SQL Server 2019 preview version (SQL Server vNext 2.0) in the ignite 2018 event. 
+                    As you know, SQL Server 2017 is still being adopted by the organizations, we are now ready with this preview version.</p>
+                <p>As we know, SQL Server 2017 works on the cross-platform operating system for both Windows and Linux operating systems.</p>
+            </article>
+            </section>
+            <section class="main-section" id="SQL Server Architecture">
+                <header>SQL Server Architecture</header>
+                <article>
+                    <hr>
+                    <br>
+                    <p>The following diagram illustrates the architecture of the SQL Server:</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/SQL_Server.svg/769px-SQL_Server.svg.png" alt="Sqlserver Architecture">
+                    <p>SQL Server consists of two main components:</p>
+                    <ul>
+                        <li>Database Engine</li>
+                        <li>SQLOS</li>
+                    </ul>
+                    <strong>1.Database Engine</strong>
+                   <ul> <p>The Database Engine component of SQL Server is the core service for storing, processing, and securing data. The Database Engine provides controlled access and rapid transaction processing to meet the requirements of the most demanding data consuming applications in your enterprise.
+                        SQL Server supports up to 50 instances of the Database Engine on a single computer. To create a typical SQL Server installation, see Install SQL Server from the Installation Wizard (Setup)</p>
+                    <p>Relational Engine</p>
+                    <p>The Relational Engine contains the components that determine the best way to execute a query. The relational engine is also known as the query processor.
+                        The relational engine requests data from the storage engine based on the input query and processed the results.</p>
+                    <p>Storage Engine</p>
+                        <p>The storage engine is in charge of storage and retrieval of data from the storage systems such as disks and SAN.</p>
+                    </ul>
+                        <strong>2.SQLOS</strong>
+                    <ul>
+                        <p>Under the relational engine and storage engine is the SQL Server Operating System or SQLOS.
+                            SQLOS provides many operating system services such as memory and I/O management. Other services include exception handling and synchronization services.
+                        </p>   
+                    </ul> 
+                </article>
+            </section>
+            <section class="main-section"id="SQL Server Services and Tools" >
+                <header>SQL Server Services and Tools</header>
+                <hr>
+                <article>
+                    <p>Microsoft provides both data management and business intelligence (BI) tools and services together with SQL Server</p>
+                    <p>For data management, SQL Server includes SQL Server Integration Services (SSIS), SQL Server Data Quality Services, and SQL Server Master Data Services. To develop databases, 
+                        SQL Server provides SQL Server Data tools; and to manage, deploy, and monitor databases SQL Server has SQL Server Management Studio (SSMS).</p>
+                    <p>For data analysis, SQL Server offers SQL Server Analysis Services (SSAS). SQL Server Reporting Services (SSRS) provides reports and visualization of data. 
+                        The Machine Learning Services technology appeared first in SQL Server 2016 which was renamed from the R Services.</p>
+                
+                </article>           
+             </section>
+            <section class="main-section" id="SQL Server Editions">
+                <header>SQL Server Editions</header>
+                <hr>
+                <article>
+                    <p>Microsoft makes SQL Server available in multiple editions, with different feature sets and targeting different users. These editions are:</p>
+                    <ul>
+                        <li>Mainstream editions</li>
+                        <li>Specialized editions</li>
+                        <li>Discontinued editions</li>
+                    </ul>
+                    <strong>Mainstream editions</strong>
+                    <ul>
+                        <li>Enterprise</li>
+                        <p>SQL Server Enterprise Edition includes both the core database engine and add-on services, with a range of tools for creating and managing a SQL Server cluster. 
+                            It can manage databases as large as 524 petabytes and address 12 terabytes of memory and supports 640 logical processors (CPU cores).</p>
+                        
+                        <li>Standard</li>
+                        <p>SQL Server Standard edition includes the core database engine, along with the stand-alone services. It differs from Enterprise edition in that it supports fewer active instances (number of nodes in a cluster) and
+                            some high-availability functions such as hot-add memory (allowing memory to be added while the server is still running), and parallel indexes.</p>
+                        <li>Web</li>
+                        <P>SQL Server Web Edition is a low-TCO option for Web hosting.</P>
+                        <li>Business Intelligence</li>
+                        <p>Introduced in SQL Server 2012 and focusing on Self Service and Corporate Business Intelligence. 
+                            It includes the Standard Edition capabilities and Business Intelligence tools: PowerPivot, Power View, 
+                            the BI Semantic Model, Master Data Services, Data Quality Services and xVelocity in-memory analytics.</p>
+                        <li>Workgroup</li>
+                        <p>SQL Server Workgroup Edition includes 
+                            the core database functionality but does not include the additional services. Note that this edition has been retired in SQL Server 2012.</p>
+                        <li>Express</li>
+                        <p>SQL Server Express Edition is a scaled down, free edition of SQL Server, which includes the core database engine. 
+                            While there are no limitations on the number of databases or users supported, it is limited to using one processor, 1 GB memory and 10 GB database files (4 GB database files prior to SQL Server Express 2008 R2). 
+                            It is intended as a replacement for MSDE. Two additional editions provide a superset of features not in the original Express Edition. 
+                            The first is SQL Server Express with Tools, which includes 
+                            SQL Server Management Studio Basic. SQL Server Express with Advanced Services adds full-text search capability and reporting services.</p>
+                    </ul>
+                    
+                    <strong>Specialized editions</strong>
+                    <ul>
+                        <li>Azure</li>
+                        <p>Azure SQL Data Warehouse is the cloud-based version of Microsoft SQL Server in a MPP (massively parallel processing) 
+                            architecture for analytics workloads, presented as a platform as a service offering on Microsoft Azure.</p>
+                        <li>Compact (SQL CE)</li>
+                        <p>The compact edition is an embedded database engine. Unlike the other editions of SQL Server, the SQL CE engine is based on SQL Mobile (initially designed for use with hand-held devices) and does not share the same binaries. 
+                            Due to its small size (1 MB DLL footprint), it has a markedly reduced feature set compared to the other editions. For example, it supports a subset of the standard data types, does not support stored procedures or Views or multiple-statement batches (among other limitations). 
+                            It is limited to 4 GB maximum database size and cannot be run as a Windows service, Compact Edition must be hosted by the application using it. 
+                            The 3.5 version includes support for ADO.NET Synchronization Services. SQL CE does not support ODBC connectivity, unlike SQL Server proper.</p>
+                        <li>Developer</li>
+                        <p>SQL Server Developer Edition includes the same features as SQL Server Enterprise Edition, but is limited by the license to be only used as a development and test system, and not as production server. 
+                            Starting early 2016, Microsoft made this edition free of charge to the public.</p>
+                        <li>Embedded (SSEE)</li>
+                        <p>SQL Server 2005 Embedded Edition is a specially configured named instance of the SQL Server Express database engine which can be accessed only by certain Windows Services.</p>
+                        <li>Evaluation</li>
+                        <p>SQL Server Evaluation Edition, also known as the Trial Edition, has all the features of the Enterprise Edition, but is limited to 180 days, after which the tools will continue to run, but the server services will stop.</p>
+                        <li>Fast Track</li>
+                        <p>SQL Server Fast Track is specifically for enterprise-scale data warehousing storage and business intelligence processing, and runs on reference-architecture hardware that is optimized for Fast Track.</p>
+                        <li>LocalDB</li>
+                        <p>Introduced in SQL Server Express 2012, LocalDB is a minimal, on-demand, version of SQL Server that is designed for application developers.[18] It can also be used as an embedded database.</p>
+                        <li>Analytics Platform System (APS)</li>
+                        <p>Formerly Parallel Data Warehouse (PDW) A massively parallel processing (MPP) SQL Server appliance optimized for large-scale data warehousing such as hundreds of terabytes</p>
+                        <li>Datawarehouse Appliance Edition</li>
+                        <p>Pre-installed and configured as part of an appliance in partnership with Dell & HP base on the Fast Track architecture. This edition does not include SQL Server Integration Services, Analysis Services, or Reporting Services.sqlcmd</p>
+                    </ul>
+                    <p></p>
+                    <strong>Discontinued editions</strong>
+                    <ul>
+                        <li>MSDE</li>
+                        <p>Microsoft SQL Server Data Engine / Desktop Engine / Desktop Edition. SQL Server 7 and SQL Server 2000. Intended for use as an application component, it did not include GUI management tools. Later, Microsoft also made available a web admin tool. 
+                            Included with some versions of Microsoft Access, Microsoft development tools, and other editions of SQL Server.</p>
+                        <li>Personal Edition</li>
+                        <p>SQL Server 2000. Had workload or connection limits like MSDE, but no database size limit. Includes standard management tools. Intended for use as a mobile / disconnected proxy, licensed for use with SQL Server 2000 Standard edition.</p>
+                        <li>Datacenter</li>
+                        <p>SQL Server 2008 R2 Datacenter is a full-featured edition of SQL Server and is designed for datacenters that need high levels of application support and scalability. It supports 256 logical processors and virtually unlimited memory and comes with StreamInsight Premium edition.
+                            The Datacenter edition has been retired in SQL Server 2012; all of its features are available in SQL Server 2012 Enterprise Edition.</p>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Installation">
+                <header>Installation</header>
+                <hr>
+                <article>
+                    <strong>SQL Server installation guide</strong>
+                    <p>This article provides a step-by-step procedure for installing a new instance of SQL Server by using the SQL Server Setup Installation Wizard.
+                         The Installation Wizard provides a single feature tree for installation of all SQL Server components 
+                        so that you don't have to install them individually. To install the SQL Server components individually, 
+                        see <a href="https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server?view=sql-server-ver15#individual-component-installation" target="_blank"> Install SQL Server</a>.</p>
+                    <strong>Prerequisites</strong>
+                    <p>Before you install SQL Server, review  <a href="https://docs.microsoft.com/en-us/sql/sql-server/install/planning-a-sql-server-installation?view=sql-server-ver15" target="_blank"> Planning a SQL Server installation.</a> </p>
+                    <strong>Install SQL Server from the Installation Wizard (Setup)</strong>
+                    <p>Steps to <a href="https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server-from-the-installation-wizard-setup?view=sql-server-ver15#to-install-sql-server-2019" target="_blank" rel="noopener noreferrer">install SQL Server 2019 </a></p>
+                </article>
+            </section>
+            <section class="main-section" id="Connect to the SQL Server">
+                <header>Connect to the SQL Server</header>
+                <hr>
+                <article>
+                <strong>Connect to the SQL Server using SSMS</strong>
+                <p>To connect to the SQL Server using the Microsoft SQL Server Management Studio, you use these steps:</p>
+               <ul> 
+                    <li>First, launch the Microsoft SQL Server Management Studio from the Start menu</li>
+                    <li>Next, from the Connect menu under the Object Explorer, choose the Database Engine… </li>
+                    <p>Then, enter the information for the Server name (localhost), Authentication (SQL Server Authentication), and password for the  sa user and click the Connect button to connect to the SQL Server.
+                         Note that you should use the sa user and password that you entered during the installation.</p>
+                    <li>If the connection is established successfully, then you will see the Object Explorer panel</li>
+                    <h1>Execute a query</h1> 
+                    <p>To execute a query you follow these steps:</p>                   
+                    <li>First, right-click on the localhost (SQL Server …) node and choose the New Query menu item</li>
+                    <li>Second, enter the following query in the Editor</li>
+                    <code>select @@version;</code>
+                    <p>This query returns the version of the SQL Server.</p>
+                    <li>Third, click the Execute button.</li>
+                    <p>The Results window shows the version of the SQL Server as shown in the above screenshot.
+                         A quick way to execute a query is to press the F5 keyboard shortcut.</p>
+                    <p>Now, you should know how to connect to a SQL Server and execute a query from the SSMS.</p>
+                    <li></li>
+                </ul>
+            </article>
+            </section>
+            <section class="main-section">
+                <header></header>
+            </section>
+            <section class="main-section">
+                <header></header>
+            </section>
+            <section class="main-section">
+                <header></header>
+            </section>
+        </main>
+    </div>
+    
+</body>
+</html>
