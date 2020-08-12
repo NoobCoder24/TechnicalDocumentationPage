@@ -13,14 +13,15 @@
         <header>MSSQL Documentation</header>
         
         <a href="#Introduction" class="nav-link">Introduction</a>
-        <a href="#SQL Server Architecture" class="nav-link">SQL Server Architecture</a>
-        <a href="#SQL Server Services and Tools" class="nav-link">SQL Server Services and Tools</a>
-        <a href="#SQL Server Editions" class="nav-link">SQL Server Editions</a>
+        <a href="#SQL_Server_Architecture" class="nav-link">SQL Server Architecture</a>
+        <a href="#SQL_Server_Services_and_Tools" class="nav-link">SQL Server Services and Tools</a>
+        <a href="#SQL_Server_Editions" class="nav-link">SQL Server Editions</a>
         <a href="#Installation" class="nav-link">Installation</a>
-        <a href="#Connect to the SQL Server" class="nav-link">Connect to the SQL Server</a>
-        <a href="" class="nav-link"></a>
-        <a href="" class="nav-link"></a>
-        <a href="" class="nav-link"></a>
+        <a href="#Connect_to_the_SQL_Server" class="nav-link">Connect to the SQL Server</a>
+        <a href="#Database" class="nav-link">Database</a>
+        <a href="#Backup" class="nav-link">Backup</a>
+        <a href="#Restore" class="nav-link" >Restore</a>
+        <a href="#Reference" class="nav-link" >Reference</a>
     </nav>
     </div>
   
@@ -46,7 +47,7 @@
                 <p>As we know, SQL Server 2017 works on the cross-platform operating system for both Windows and Linux operating systems.</p>
             </article>
             </section>
-            <section class="main-section" id="SQL Server Architecture">
+            <section class="main-section" id="SQL_Server_Architecture">
                 <header>SQL Server Architecture</header>
                 <article>
                     <hr>
@@ -75,7 +76,7 @@
                     </ul> 
                 </article>
             </section>
-            <section class="main-section"id="SQL Server Services and Tools" >
+            <section class="main-section"id="SQL_Server_Services_and_Tools" >
                 <header>SQL Server Services and Tools</header>
                 <hr>
                 <article>
@@ -87,7 +88,7 @@
                 
                 </article>           
              </section>
-            <section class="main-section" id="SQL Server Editions">
+            <section class="main-section" id="SQL_Server_Editions">
                 <header>SQL Server Editions</header>
                 <hr>
                 <article>
@@ -178,7 +179,7 @@
                     <p>Steps to <a href="https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server-from-the-installation-wizard-setup?view=sql-server-ver15#to-install-sql-server-2019" target="_blank" rel="noopener noreferrer">install SQL Server 2019 </a></p>
                 </article>
             </section>
-            <section class="main-section" id="Connect to the SQL Server">
+            <section class="main-section" id="Connect_to_the_SQL_Server">
                 <header>Connect to the SQL Server</header>
                 <hr>
                 <article>
@@ -246,24 +247,125 @@
                             <ul>
                                 <li>Method 1 – Using T-SQL Script or Restore Database</li>
                                 <p>Following is the basic syntax for creating database in MS SQL Server.</p>
-                                <pre><code>Create database <yourdatabasename></code></pre>
+                               <code>Create database '<'yourdatabasename'>'</code>
                                     <p>OR</p>
-                                <pre><code>Restore Database <yourdatabasename> from disk = '<Backup file location + file name></Backup></code></pre>
+                                <code>Restore Database '<'yourdatabasename'>' from disk = '<'Backup file location + file name'>'</code>
+                                <p></p>
+                            </ul>
+                            <ul>
+                                <li>Method 2 - Using SQL Server Management Studio</li>
+                                <p>Connect to SQL Server instance and right-click on the databases folder. Click on new database and the following screen will appear.</p>
+                                <p>Enter the database name field with your database name (example: to create database with the name ‘Testdb’) and click OK. 
+                                    Testdb database will be created as shown in the following snapshot.</p>
+                    
                             </ul>
                         </ul>
 
                         <li>Select Database</li>
-
+                        <p>Select your database based on your action before going ahead with any of the following methods.</p>
+                        <ul> 
+                            <p>To run a query to select backup history on database called ‘msdb’, select the msdb database as shown in the following snapshot.</p>
+                                <li>Method 3 -Using T-SQL Script</li>
+                                <p></p>
+                                <code>Use '<'your database name'>'</code>
+                                <p>To run your query to select backup history on database called ‘msdb’, select the msdb database by executing the following query</p>
+                                <code>Exec use msdb</code>
+                                <p>The query will open msdb database. You can execute the following query to select backup history.</p>
+                                <code>Select * from backupset</code>
+                                <p></p>
+                        </ul>
                         <li>Drop Database</li>
+                        <p>To remove your database from MS SQL Server, use drop database command. Following two methods can be used for this purpose.</p>
+                        <ul>
+                            <li>Method 1 – Using T-SQL Script</li>
+                            <p>Following is the basic syntax for removing database from MS SQL Server.</p>
+                            <code>Drop database '<'your database name'>'</code>
+                            <p></p>
+                            <li>Method 2 – Using MS SQL Server Management Studio</li>
+                            <p>Connect to SQL Server and right-click the database you want to remove. 
+                                Click delete command and the following screen will appear.</p>
+                            <p>Click OK to remove the database from MS SQL Server</p>
+                        </ul>
                     </ul>
                 </article>
             </section>
-            <section class="main-section">
-                <header></header>
+            <section class="main-section" id="Backup">
+                <header>Backup</header>
+                <hr>
+                <article>
+                    <p>Backup is a copy of data/database, etc. Backing up MS SQL Server database is essential for protecting data. 
+                        MS SQL Server backups are mainly three types − Full or Database, Differential or Incremental, and Transactional Log or Log.</p>
+                    <p>Backup database can be done using either of the following two methods.</p>
+                    <ul>
+                        <li>Method 1 – Using T-SQL</li>
+                        <ul>
+                            <li>Full Type Backup</li>
+                            <p></p>
+                            <code>"Backup database '<'Your database name'>' to disk = '<'Backup file location + file name'>'"</code>
+                            <p></p>
+                            <li>Differential Type</li>
+                            <p></p>
+                            <code>"Backup database '<'Your database name'>' to disk = '<'Backup file location + file name'>' with differential"</code> 
+                            <p></p>
+                            <li>Log Type</li>
+                            <p></p>
+                            <code>Backup log '<'Your database name'> 'to disk = '<'Backup file location + file name'>'</code>
+                            <p></p>
+                        </ul>
+                
+                        <li>Method 2 – Using SSMS (SQL SERVER Management Studio)</li>
+                        <p>Step 1 − Connect to database instance named 'TESTINSTANCE' and expand databases folder</p>
+                        <p>Step 2 − Right-click on 'TestDB' database and select tasks. Click Backup and the following screen will appear.</p>
+                        <p>Step 3 − Select backup type (Full\diff\log) and 
+                            make sure to check destination path which is where the backup file will be created. Select options at the top left corner to 
+                            see the following screen.</p>
+                        <p>Step 4 − Click OK to create 'TestDB' database full backup as shown in the following snapshot.</p>
+                        
+                    </ul>
+
+                </article>
             </section>
-            <section class="main-section">
-                <header></header>
+            <section class="main-section" id="Restore">
+                <header>Restore</header>
+                <hr>
+                <article>
+                    <p>Restoring is the process of copying data from a backup and applying logged 
+                        transactions to the data. Restore is what you do with backups. Take the backup file and turn it back into a database</p>
+                    <p>The Restore database option can be done using either of the following two methods.</p>
+                    <ul>
+                        <li>Method 1 – T-SQL</li>
+                        <p></p>
+                        <p>Syntax</p>
+                        <code>"Restore database '<'Your database name'>' from disk = '<'Backup file location + file name'>'"</code>
+                        <p></p>
+                        <li>Method 2 – SSMS (SQL SERVER Management Studio)</li>
+                        <p></p>
+                        <p>Step 1 − Connect to database instance named 'TESTINSTANCE'
+                             and right-click on databases folder. Click Restore database as shown in the following snapshot.</p>
+                        <p>Step 2 − Select device radio button and click on ellipse to select the backup file as shown in the following snapshot.</p>
+                        <p>Step 3 − Click OK and the following screen pops up.</p>
+                        <p>Step 4 − Select Files option which is on the top left corner as shown in the following snapshot.</p>
+                        <p>Step 5 − Select Options which is on the top left corner and click OK to restore 'TestDB' database as shown in the following snapshot.</p>
+
+                    </ul>
+                </article>
             </section>
+            <section class="main-section" id="Reference">
+                <header>Reference</header>
+                <hr>
+                <article>
+                  <ul>
+                    <li>
+                      All the documentation in this page is taken from
+                      <a
+                        href="https://en.wikipedia.org/wiki/Microsoft_SQL_Server#SQL_Server_Management_Studio"
+                        target="_blank"
+                        >MDN</a
+                      >
+                    </li>
+                  </ul>
+                </article>
+              </section>
         </main>
     </div>
     
