@@ -4,4 +4,4 @@ Its for FreeCodeCamp certification project
 
 URL for the page :
 
- https://noobcoder24.github.io/TechnicalDocumentationPage/
+ https://noobcoder24.github.io/TechnicalDocumentationPage/Index.html
